@@ -5,13 +5,13 @@
 # compile CXX with /usr/bin/c++
 C_DEFINES = -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\"/home/rythm/projects/games/autogen-geodash\"
 
-C_INCLUDES = -I/home/rythm/projects/games/autogen-geodash/src -I/home/rythm/projects/games/autogen-geodash/include -I/home/rythm/projects/games/autogen-geodash/vendor/glad
+C_INCLUDES = -I/home/rythm/projects/games/autogen-geodash/src -I/home/rythm/projects/games/autogen-geodash/vendor -I/home/rythm/projects/games/autogen-geodash/vendor/glad
 
 C_FLAGS = 
 
 CXX_DEFINES = -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\"/home/rythm/projects/games/autogen-geodash\"
 
-CXX_INCLUDES = -I/home/rythm/projects/games/autogen-geodash/src -I/home/rythm/projects/games/autogen-geodash/include -I/home/rythm/projects/games/autogen-geodash/vendor/glad
+CXX_INCLUDES = -I/home/rythm/projects/games/autogen-geodash/src -I/home/rythm/projects/games/autogen-geodash/vendor -I/home/rythm/projects/games/autogen-geodash/vendor/glad
 
 CXX_FLAGS = 
 

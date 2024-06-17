@@ -292,6 +292,11 @@ CMakeFiles/autogen-geodash.dir/src/game.cpp.o: \
  /usr/include/c++/11/bits/charconv.h \
  /usr/include/c++/11/bits/basic_string.tcc \
  /home/rythm/projects/games/autogen-geodash/src/texture.hpp \
+ /home/rythm/projects/games/autogen-geodash/src/game_object.hpp \
+ /home/rythm/projects/games/autogen-geodash/src/game_level.hpp \
+ /usr/include/c++/11/deque /usr/include/c++/11/bits/stl_uninitialized.h \
+ /usr/include/c++/11/bits/stl_deque.h /usr/include/c++/11/bits/deque.tcc \
+ /usr/include/GLFW/glfw3.h \
  /home/rythm/projects/games/autogen-geodash/src/resource_manager.hpp \
  /usr/include/c++/11/map /usr/include/c++/11/bits/stl_tree.h \
  /usr/include/c++/11/ext/aligned_buffer.h \

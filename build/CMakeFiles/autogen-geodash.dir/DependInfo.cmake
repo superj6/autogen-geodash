@@ -10,6 +10,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/rythm/projects/games/autogen-geodash/vendor/glad/src/glad.c" "CMakeFiles/autogen-geodash.dir/vendor/glad/src/glad.c.o" "gcc" "CMakeFiles/autogen-geodash.dir/vendor/glad/src/glad.c.o.d"
   "/home/rythm/projects/games/autogen-geodash/src/game.cpp" "CMakeFiles/autogen-geodash.dir/src/game.cpp.o" "gcc" "CMakeFiles/autogen-geodash.dir/src/game.cpp.o.d"
+  "/home/rythm/projects/games/autogen-geodash/src/game_level.cpp" "CMakeFiles/autogen-geodash.dir/src/game_level.cpp.o" "gcc" "CMakeFiles/autogen-geodash.dir/src/game_level.cpp.o.d"
+  "/home/rythm/projects/games/autogen-geodash/src/game_object.cpp" "CMakeFiles/autogen-geodash.dir/src/game_object.cpp.o" "gcc" "CMakeFiles/autogen-geodash.dir/src/game_object.cpp.o.d"
   "/home/rythm/projects/games/autogen-geodash/src/main.cpp" "CMakeFiles/autogen-geodash.dir/src/main.cpp.o" "gcc" "CMakeFiles/autogen-geodash.dir/src/main.cpp.o.d"
   "/home/rythm/projects/games/autogen-geodash/src/resource_manager.cpp" "CMakeFiles/autogen-geodash.dir/src/resource_manager.cpp.o" "gcc" "CMakeFiles/autogen-geodash.dir/src/resource_manager.cpp.o.d"
   "/home/rythm/projects/games/autogen-geodash/src/shader.cpp" "CMakeFiles/autogen-geodash.dir/src/shader.cpp.o" "gcc" "CMakeFiles/autogen-geodash.dir/src/shader.cpp.o.d"

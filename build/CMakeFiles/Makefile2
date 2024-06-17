@@ -81,12 +81,12 @@ clean: CMakeFiles/autogen-geodash.dir/clean
 CMakeFiles/autogen-geodash.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/autogen-geodash.dir/build.make CMakeFiles/autogen-geodash.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/autogen-geodash.dir/build.make CMakeFiles/autogen-geodash.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rythm/projects/games/autogen-geodash/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target autogen-geodash"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rythm/projects/games/autogen-geodash/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10 "Built target autogen-geodash"
 .PHONY : CMakeFiles/autogen-geodash.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/autogen-geodash.dir/rule:
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rythm/projects/games/autogen-geodash/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rythm/projects/games/autogen-geodash/build/CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/autogen-geodash.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/rythm/projects/games/autogen-geodash/build/CMakeFiles 0
 .PHONY : CMakeFiles/autogen-geodash.dir/rule

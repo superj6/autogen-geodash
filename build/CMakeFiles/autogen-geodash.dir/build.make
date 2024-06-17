@@ -83,10 +83,38 @@ CMakeFiles/autogen-geodash.dir/src/game.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/autogen-geodash.dir/src/game.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rythm/projects/games/autogen-geodash/src/game.cpp -o CMakeFiles/autogen-geodash.dir/src/game.cpp.s
 
+CMakeFiles/autogen-geodash.dir/src/game_level.cpp.o: CMakeFiles/autogen-geodash.dir/flags.make
+CMakeFiles/autogen-geodash.dir/src/game_level.cpp.o: ../src/game_level.cpp
+CMakeFiles/autogen-geodash.dir/src/game_level.cpp.o: CMakeFiles/autogen-geodash.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rythm/projects/games/autogen-geodash/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/autogen-geodash.dir/src/game_level.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/autogen-geodash.dir/src/game_level.cpp.o -MF CMakeFiles/autogen-geodash.dir/src/game_level.cpp.o.d -o CMakeFiles/autogen-geodash.dir/src/game_level.cpp.o -c /home/rythm/projects/games/autogen-geodash/src/game_level.cpp
+
+CMakeFiles/autogen-geodash.dir/src/game_level.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/autogen-geodash.dir/src/game_level.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rythm/projects/games/autogen-geodash/src/game_level.cpp > CMakeFiles/autogen-geodash.dir/src/game_level.cpp.i
+
+CMakeFiles/autogen-geodash.dir/src/game_level.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/autogen-geodash.dir/src/game_level.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rythm/projects/games/autogen-geodash/src/game_level.cpp -o CMakeFiles/autogen-geodash.dir/src/game_level.cpp.s
+
+CMakeFiles/autogen-geodash.dir/src/game_object.cpp.o: CMakeFiles/autogen-geodash.dir/flags.make
+CMakeFiles/autogen-geodash.dir/src/game_object.cpp.o: ../src/game_object.cpp
+CMakeFiles/autogen-geodash.dir/src/game_object.cpp.o: CMakeFiles/autogen-geodash.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rythm/projects/games/autogen-geodash/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/autogen-geodash.dir/src/game_object.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/autogen-geodash.dir/src/game_object.cpp.o -MF CMakeFiles/autogen-geodash.dir/src/game_object.cpp.o.d -o CMakeFiles/autogen-geodash.dir/src/game_object.cpp.o -c /home/rythm/projects/games/autogen-geodash/src/game_object.cpp
+
+CMakeFiles/autogen-geodash.dir/src/game_object.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/autogen-geodash.dir/src/game_object.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rythm/projects/games/autogen-geodash/src/game_object.cpp > CMakeFiles/autogen-geodash.dir/src/game_object.cpp.i
+
+CMakeFiles/autogen-geodash.dir/src/game_object.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/autogen-geodash.dir/src/game_object.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rythm/projects/games/autogen-geodash/src/game_object.cpp -o CMakeFiles/autogen-geodash.dir/src/game_object.cpp.s
+
 CMakeFiles/autogen-geodash.dir/src/main.cpp.o: CMakeFiles/autogen-geodash.dir/flags.make
 CMakeFiles/autogen-geodash.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/autogen-geodash.dir/src/main.cpp.o: CMakeFiles/autogen-geodash.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rythm/projects/games/autogen-geodash/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/autogen-geodash.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rythm/projects/games/autogen-geodash/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/autogen-geodash.dir/src/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/autogen-geodash.dir/src/main.cpp.o -MF CMakeFiles/autogen-geodash.dir/src/main.cpp.o.d -o CMakeFiles/autogen-geodash.dir/src/main.cpp.o -c /home/rythm/projects/games/autogen-geodash/src/main.cpp
 
 CMakeFiles/autogen-geodash.dir/src/main.cpp.i: cmake_force
@@ -100,7 +128,7 @@ CMakeFiles/autogen-geodash.dir/src/main.cpp.s: cmake_force
 CMakeFiles/autogen-geodash.dir/src/resource_manager.cpp.o: CMakeFiles/autogen-geodash.dir/flags.make
 CMakeFiles/autogen-geodash.dir/src/resource_manager.cpp.o: ../src/resource_manager.cpp
 CMakeFiles/autogen-geodash.dir/src/resource_manager.cpp.o: CMakeFiles/autogen-geodash.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rythm/projects/games/autogen-geodash/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/autogen-geodash.dir/src/resource_manager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rythm/projects/games/autogen-geodash/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/autogen-geodash.dir/src/resource_manager.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/autogen-geodash.dir/src/resource_manager.cpp.o -MF CMakeFiles/autogen-geodash.dir/src/resource_manager.cpp.o.d -o CMakeFiles/autogen-geodash.dir/src/resource_manager.cpp.o -c /home/rythm/projects/games/autogen-geodash/src/resource_manager.cpp
 
 CMakeFiles/autogen-geodash.dir/src/resource_manager.cpp.i: cmake_force
@@ -114,7 +142,7 @@ CMakeFiles/autogen-geodash.dir/src/resource_manager.cpp.s: cmake_force
 CMakeFiles/autogen-geodash.dir/src/shader.cpp.o: CMakeFiles/autogen-geodash.dir/flags.make
 CMakeFiles/autogen-geodash.dir/src/shader.cpp.o: ../src/shader.cpp
 CMakeFiles/autogen-geodash.dir/src/shader.cpp.o: CMakeFiles/autogen-geodash.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rythm/projects/games/autogen-geodash/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/autogen-geodash.dir/src/shader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rythm/projects/games/autogen-geodash/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/autogen-geodash.dir/src/shader.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/autogen-geodash.dir/src/shader.cpp.o -MF CMakeFiles/autogen-geodash.dir/src/shader.cpp.o.d -o CMakeFiles/autogen-geodash.dir/src/shader.cpp.o -c /home/rythm/projects/games/autogen-geodash/src/shader.cpp
 
 CMakeFiles/autogen-geodash.dir/src/shader.cpp.i: cmake_force
@@ -128,7 +156,7 @@ CMakeFiles/autogen-geodash.dir/src/shader.cpp.s: cmake_force
 CMakeFiles/autogen-geodash.dir/src/sprite_renderer.cpp.o: CMakeFiles/autogen-geodash.dir/flags.make
 CMakeFiles/autogen-geodash.dir/src/sprite_renderer.cpp.o: ../src/sprite_renderer.cpp
 CMakeFiles/autogen-geodash.dir/src/sprite_renderer.cpp.o: CMakeFiles/autogen-geodash.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rythm/projects/games/autogen-geodash/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/autogen-geodash.dir/src/sprite_renderer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rythm/projects/games/autogen-geodash/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/autogen-geodash.dir/src/sprite_renderer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/autogen-geodash.dir/src/sprite_renderer.cpp.o -MF CMakeFiles/autogen-geodash.dir/src/sprite_renderer.cpp.o.d -o CMakeFiles/autogen-geodash.dir/src/sprite_renderer.cpp.o -c /home/rythm/projects/games/autogen-geodash/src/sprite_renderer.cpp
 
 CMakeFiles/autogen-geodash.dir/src/sprite_renderer.cpp.i: cmake_force
@@ -142,7 +170,7 @@ CMakeFiles/autogen-geodash.dir/src/sprite_renderer.cpp.s: cmake_force
 CMakeFiles/autogen-geodash.dir/src/texture.cpp.o: CMakeFiles/autogen-geodash.dir/flags.make
 CMakeFiles/autogen-geodash.dir/src/texture.cpp.o: ../src/texture.cpp
 CMakeFiles/autogen-geodash.dir/src/texture.cpp.o: CMakeFiles/autogen-geodash.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rythm/projects/games/autogen-geodash/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/autogen-geodash.dir/src/texture.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rythm/projects/games/autogen-geodash/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/autogen-geodash.dir/src/texture.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/autogen-geodash.dir/src/texture.cpp.o -MF CMakeFiles/autogen-geodash.dir/src/texture.cpp.o.d -o CMakeFiles/autogen-geodash.dir/src/texture.cpp.o -c /home/rythm/projects/games/autogen-geodash/src/texture.cpp
 
 CMakeFiles/autogen-geodash.dir/src/texture.cpp.i: cmake_force
@@ -156,7 +184,7 @@ CMakeFiles/autogen-geodash.dir/src/texture.cpp.s: cmake_force
 CMakeFiles/autogen-geodash.dir/vendor/glad/src/glad.c.o: CMakeFiles/autogen-geodash.dir/flags.make
 CMakeFiles/autogen-geodash.dir/vendor/glad/src/glad.c.o: ../vendor/glad/src/glad.c
 CMakeFiles/autogen-geodash.dir/vendor/glad/src/glad.c.o: CMakeFiles/autogen-geodash.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rythm/projects/games/autogen-geodash/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/autogen-geodash.dir/vendor/glad/src/glad.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/rythm/projects/games/autogen-geodash/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/autogen-geodash.dir/vendor/glad/src/glad.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/autogen-geodash.dir/vendor/glad/src/glad.c.o -MF CMakeFiles/autogen-geodash.dir/vendor/glad/src/glad.c.o.d -o CMakeFiles/autogen-geodash.dir/vendor/glad/src/glad.c.o -c /home/rythm/projects/games/autogen-geodash/vendor/glad/src/glad.c
 
 CMakeFiles/autogen-geodash.dir/vendor/glad/src/glad.c.i: cmake_force
@@ -170,6 +198,8 @@ CMakeFiles/autogen-geodash.dir/vendor/glad/src/glad.c.s: cmake_force
 # Object files for target autogen-geodash
 autogen__geodash_OBJECTS = \
 "CMakeFiles/autogen-geodash.dir/src/game.cpp.o" \
+"CMakeFiles/autogen-geodash.dir/src/game_level.cpp.o" \
+"CMakeFiles/autogen-geodash.dir/src/game_object.cpp.o" \
 "CMakeFiles/autogen-geodash.dir/src/main.cpp.o" \
 "CMakeFiles/autogen-geodash.dir/src/resource_manager.cpp.o" \
 "CMakeFiles/autogen-geodash.dir/src/shader.cpp.o" \
@@ -181,6 +211,8 @@ autogen__geodash_OBJECTS = \
 autogen__geodash_EXTERNAL_OBJECTS =
 
 ../bin/autogen-geodash: CMakeFiles/autogen-geodash.dir/src/game.cpp.o
+../bin/autogen-geodash: CMakeFiles/autogen-geodash.dir/src/game_level.cpp.o
+../bin/autogen-geodash: CMakeFiles/autogen-geodash.dir/src/game_object.cpp.o
 ../bin/autogen-geodash: CMakeFiles/autogen-geodash.dir/src/main.cpp.o
 ../bin/autogen-geodash: CMakeFiles/autogen-geodash.dir/src/resource_manager.cpp.o
 ../bin/autogen-geodash: CMakeFiles/autogen-geodash.dir/src/shader.cpp.o
@@ -189,7 +221,7 @@ autogen__geodash_EXTERNAL_OBJECTS =
 ../bin/autogen-geodash: CMakeFiles/autogen-geodash.dir/vendor/glad/src/glad.c.o
 ../bin/autogen-geodash: CMakeFiles/autogen-geodash.dir/build.make
 ../bin/autogen-geodash: CMakeFiles/autogen-geodash.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/rythm/projects/games/autogen-geodash/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable ../bin/autogen-geodash"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/rythm/projects/games/autogen-geodash/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable ../bin/autogen-geodash"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/autogen-geodash.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
