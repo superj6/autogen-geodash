@@ -1,9 +1,9 @@
 CMakeFiles/autogen-geodash.dir/src/game_level.cpp.o: \
- /home/rythm/projects/games/autogen-geodash/src/game_level.cpp \
+ /home/rythm/projects/cpp-graphics/autogen-geodash/src/game_level.cpp \
  /usr/include/stdc-predef.h \
- /home/rythm/projects/games/autogen-geodash/src/game_level.hpp \
- /home/rythm/projects/games/autogen-geodash/src/game_object.hpp \
- /home/rythm/projects/games/autogen-geodash/src/texture.hpp \
+ /home/rythm/projects/cpp-graphics/autogen-geodash/src/game_level.hpp \
+ /home/rythm/projects/cpp-graphics/autogen-geodash/src/game_object.hpp \
+ /home/rythm/projects/cpp-graphics/autogen-geodash/src/texture.hpp \
  /usr/include/glad/glad.h /usr/include/KHR/khrplatform.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
@@ -20,8 +20,8 @@ CMakeFiles/autogen-geodash.dir/src/game_level.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
- /home/rythm/projects/games/autogen-geodash/src/sprite_renderer.hpp \
- /home/rythm/projects/games/autogen-geodash/src/shader.hpp \
+ /home/rythm/projects/cpp-graphics/autogen-geodash/src/sprite_renderer.hpp \
+ /home/rythm/projects/cpp-graphics/autogen-geodash/src/shader.hpp \
  /usr/include/glm/glm.hpp /usr/include/glm/detail/_fixes.hpp \
  /usr/include/c++/11/cmath \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
@@ -292,10 +292,11 @@ CMakeFiles/autogen-geodash.dir/src/game_level.cpp.o: \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/11/bits/charconv.h \
- /usr/include/c++/11/bits/basic_string.tcc /usr/include/c++/11/deque \
- /usr/include/c++/11/bits/stl_uninitialized.h \
+ /usr/include/c++/11/bits/basic_string.tcc \
+ /home/rythm/projects/cpp-graphics/autogen-geodash/src/collision_box.hpp \
+ /usr/include/c++/11/deque /usr/include/c++/11/bits/stl_uninitialized.h \
  /usr/include/c++/11/bits/stl_deque.h /usr/include/c++/11/bits/deque.tcc \
- /home/rythm/projects/games/autogen-geodash/src/resource_manager.hpp \
+ /home/rythm/projects/cpp-graphics/autogen-geodash/src/resource_manager.hpp \
  /usr/include/c++/11/map /usr/include/c++/11/bits/stl_tree.h \
  /usr/include/c++/11/ext/aligned_buffer.h \
  /usr/include/c++/11/bits/node_handle.h \

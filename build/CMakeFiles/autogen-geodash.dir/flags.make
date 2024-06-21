@@ -3,15 +3,15 @@
 
 # compile C with /usr/bin/cc
 # compile CXX with /usr/bin/c++
-C_DEFINES = -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\"/home/rythm/projects/games/autogen-geodash\"
+C_DEFINES = -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\"/home/rythm/projects/cpp-graphics/autogen-geodash\"
 
-C_INCLUDES = -I/home/rythm/projects/games/autogen-geodash/src -I/home/rythm/projects/games/autogen-geodash/vendor -I/home/rythm/projects/games/autogen-geodash/vendor/glad
+C_INCLUDES = -I/home/rythm/projects/cpp-graphics/autogen-geodash/src -I/home/rythm/projects/cpp-graphics/autogen-geodash/vendor -I/home/rythm/projects/cpp-graphics/autogen-geodash/vendor/glad
 
 C_FLAGS = 
 
-CXX_DEFINES = -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\"/home/rythm/projects/games/autogen-geodash\"
+CXX_DEFINES = -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\"/home/rythm/projects/cpp-graphics/autogen-geodash\"
 
-CXX_INCLUDES = -I/home/rythm/projects/games/autogen-geodash/src -I/home/rythm/projects/games/autogen-geodash/vendor -I/home/rythm/projects/games/autogen-geodash/vendor/glad
+CXX_INCLUDES = -I/home/rythm/projects/cpp-graphics/autogen-geodash/src -I/home/rythm/projects/cpp-graphics/autogen-geodash/vendor -I/home/rythm/projects/cpp-graphics/autogen-geodash/vendor/glad
 
 CXX_FLAGS = 
 

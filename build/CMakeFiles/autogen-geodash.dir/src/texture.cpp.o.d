@@ -1,7 +1,7 @@
 CMakeFiles/autogen-geodash.dir/src/texture.cpp.o: \
- /home/rythm/projects/games/autogen-geodash/src/texture.cpp \
+ /home/rythm/projects/cpp-graphics/autogen-geodash/src/texture.cpp \
  /usr/include/stdc-predef.h \
- /home/rythm/projects/games/autogen-geodash/src/texture.hpp \
+ /home/rythm/projects/cpp-graphics/autogen-geodash/src/texture.hpp \
  /usr/include/glad/glad.h /usr/include/KHR/khrplatform.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \

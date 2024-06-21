@@ -1,5 +1,5 @@
 CMakeFiles/autogen-geodash.dir/vendor/glad/src/glad.c.o: \
- /home/rythm/projects/games/autogen-geodash/vendor/glad/src/glad.c \
+ /home/rythm/projects/cpp-graphics/autogen-geodash/vendor/glad/src/glad.c \
  /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \

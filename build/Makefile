@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/rythm/projects/games/autogen-geodash
+CMAKE_SOURCE_DIR = /home/rythm/projects/cpp-graphics/autogen-geodash
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/rythm/projects/games/autogen-geodash/build
+CMAKE_BINARY_DIR = /home/rythm/projects/cpp-graphics/autogen-geodash/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all:
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rythm/projects/games/autogen-geodash/build/CMakeFiles /home/rythm/projects/games/autogen-geodash/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rythm/projects/cpp-graphics/autogen-geodash/build/CMakeFiles /home/rythm/projects/cpp-graphics/autogen-geodash/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rythm/projects/games/autogen-geodash/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rythm/projects/cpp-graphics/autogen-geodash/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,6 +123,30 @@ autogen-geodash:
 autogen-geodash/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/autogen-geodash.dir/build.make CMakeFiles/autogen-geodash.dir/build
 .PHONY : autogen-geodash/fast
+
+src/collision_box.o: src/collision_box.cpp.o
+.PHONY : src/collision_box.o
+
+# target to build an object file
+src/collision_box.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/autogen-geodash.dir/build.make CMakeFiles/autogen-geodash.dir/src/collision_box.cpp.o
+.PHONY : src/collision_box.cpp.o
+
+src/collision_box.i: src/collision_box.cpp.i
+.PHONY : src/collision_box.i
+
+# target to preprocess a source file
+src/collision_box.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/autogen-geodash.dir/build.make CMakeFiles/autogen-geodash.dir/src/collision_box.cpp.i
+.PHONY : src/collision_box.cpp.i
+
+src/collision_box.s: src/collision_box.cpp.s
+.PHONY : src/collision_box.s
+
+# target to generate assembly for a file
+src/collision_box.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/autogen-geodash.dir/build.make CMakeFiles/autogen-geodash.dir/src/collision_box.cpp.s
+.PHONY : src/collision_box.cpp.s
 
 src/game.o: src/game.cpp.o
 .PHONY : src/game.o
@@ -348,6 +372,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... autogen-geodash"
+	@echo "... src/collision_box.o"
+	@echo "... src/collision_box.i"
+	@echo "... src/collision_box.s"
 	@echo "... src/game.o"
 	@echo "... src/game.i"
 	@echo "... src/game.s"

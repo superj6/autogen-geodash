@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "../bin/autogen-geodash"
   "../bin/autogen-geodash.pdb"
+  "CMakeFiles/autogen-geodash.dir/src/collision_box.cpp.o"
+  "CMakeFiles/autogen-geodash.dir/src/collision_box.cpp.o.d"
   "CMakeFiles/autogen-geodash.dir/src/game.cpp.o"
   "CMakeFiles/autogen-geodash.dir/src/game.cpp.o.d"
   "CMakeFiles/autogen-geodash.dir/src/game_level.cpp.o"
