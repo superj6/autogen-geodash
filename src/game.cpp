@@ -1,25 +1,12 @@
 #include "game.hpp"
 #include "resource_manager.hpp"
 
-bool Game::checkCollision(GameObject &obj1, GameObject &obj2){
-  GameObject *objs[2] = {&obj1, &obj2};
-  for(int dim = 0; dim < 2; dim++){
-    for(int i = 0; i < 2; i++){
-      if(objs[i]->position[dim] + objs[i]->size[dim] < objs[!i]->position[dim]){
-        return false;
-      }
-    }
-  }
-  return true;
-}
-
 Game::Game(unsigned int width, unsigned int height) : width(width), height(height), blockSize(50.0f), state(GAME_MENU), player(){}
 
 void Game::init(){
   Shader spriteShader = ResourceManager::loadShader("shaders/sprite.vert", "shaders/sprite.frag", "sprite");
 
   glm::mat4 projection = glm::ortho(0.0f, (float)width, (float)height, 0.0f, -1.0f, 1.0f);
-  projection  = projection * glm::lookAt(glm::vec3(0.0f, 0.0f, 0.25f), glm::vec3(0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 
   spriteShader.use();
   spriteShader.setMat4("projection", projection);
@@ -86,20 +73,25 @@ void Game::update(float dt){
 
   player.move(dt);
   level->scroll(dt);
-
-  glm::vec2 playerPrevPos = player.movePredict(-dt);
-
+  
   playerOnGround = false;
+  float newPosY = 0.0f;
   for(GameObject &block : level->getBlocks()){
-    if(checkCollision(player, block)){
-      if(playerPrevPos.y + player.size.y <= block.position.y + 1){
-        player.position.y = block.position.y - player.size.y;
-	player.velocity.y = 0;
+    if(player.checkCollision(block)){
+      if(player.checkCollisionSide(block, dt) == TOP){
+        newPosY = block.position.y - player.size.y;
 	playerOnGround = true;
       }else{
         state = GAME_OVER;
+	playerOnGround = false;
+	break;
       }
     } 
+  }
+
+  if(playerOnGround){
+    player.position.y = newPosY;
+    player.velocity.y = 0;
   }
 }
 

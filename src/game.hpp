@@ -25,7 +25,6 @@ private:
   GameObject player;
   GameLevel *level;
   bool playerOnGround;
-  bool checkCollision(GameObject &obj1, GameObject &obj2);
 public:
   Game(unsigned int width, unsigned int height);
   void init();
