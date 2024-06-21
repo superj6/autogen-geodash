@@ -297,7 +297,9 @@ CMakeFiles/autogen-geodash.dir/src/game.cpp.o: \
  /home/rythm/projects/cpp-graphics/autogen-geodash/src/game_level.hpp \
  /usr/include/c++/11/deque /usr/include/c++/11/bits/stl_uninitialized.h \
  /usr/include/c++/11/bits/stl_deque.h /usr/include/c++/11/bits/deque.tcc \
- /usr/include/GLFW/glfw3.h \
+ /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_vector.h \
+ /usr/include/c++/11/bits/stl_bvector.h \
+ /usr/include/c++/11/bits/vector.tcc /usr/include/GLFW/glfw3.h \
  /home/rythm/projects/cpp-graphics/autogen-geodash/src/resource_manager.hpp \
  /usr/include/c++/11/map /usr/include/c++/11/bits/stl_tree.h \
  /usr/include/c++/11/ext/aligned_buffer.h \

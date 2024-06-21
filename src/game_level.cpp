@@ -1,5 +1,6 @@
 #include "game_level.hpp"
 #include "resource_manager.hpp"
+#include "collision_box.hpp"
 
 #include <random>
 
@@ -7,21 +8,146 @@ bool GameLevel::scrolledOffscreen(){
   return scrollOffset <= -blockSize;
 }
 
-std::deque<GameObject>& GameLevel::getBlocks(){
-  return blocks;
+std::pair<glm::vec2, bool> GameLevel::getNextActivePosition(glm::vec2 startPos, std::vector<CollisionBox> column){
+  CollisionBox player;
+  player.position = startPos;
+  player.size = glm::vec2(blockSize);
+  player.velocity.y = -400.0f;
+  player.velocity.x = scrollVelocity;
+  player.acceleration.y = 1000.0f; 
+
+  bool collided = false;
+  const float dt = 1.0f / 10.0f;
+  std::pair<glm::vec2, bool> retPos;
+  while(!collided && player.position.x <= column[0].position.x + column[0].size.x){
+    player.move(dt);
+
+    for(CollisionBox &block : column){
+      if(player.checkCollision(block)){
+	collided = true;
+	if(player.checkCollisionSide(block, dt) == SIDE_TOP){
+	  glm::vec2 pos = glm::vec2(player.position.x, block.position.y - block.size.y);
+	  retPos = std::make_pair(pos, true);
+	}else{
+	  retPos = std::make_pair(glm::vec2(0.0f), false);
+	  break;
+	}
+      }
+    }
+  }
+
+  if(!collided){
+    retPos = std::make_pair(startPos, true);
+  }
+  
+  return retPos;
+}
+
+unsigned int GameLevel::getMaxColumnHeight(glm::vec2 startPos){
+  CollisionBox player;
+  player.position = startPos;
+  player.size = glm::vec2(blockSize);
+  player.velocity.y = -400.0f;
+  player.velocity.x = scrollVelocity;
+  player.acceleration.y = 1000.0f; 
+
+  std::vector<CollisionBox> column;
+  for(unsigned int i = 0; i < bottomY / blockSize - 1; i++){
+    CollisionBox block;
+    block.position = glm::vec2(scrollOffset + columnHeights.size() * blockSize,
+	bottomY - (i + 1) * blockSize);
+    block.size = glm::vec2(blockSize);
+    column.push_back(block);
+  }
+
+  unsigned int maxHeight = 0, maxHit = column.size();
+  const float dt = 1.0f / 10.0f;
+  while(player.position.x <= column[0].position.x + column[0].size.x){
+    player.move(dt);
+
+    for(unsigned int i = 0; i < column.size(); i++){
+      CollisionBox &block = column[i];
+      if(i < maxHit && player.checkCollision(block)){
+	maxHit = i;
+	if(player.checkCollisionSide(block, dt) == SIDE_TOP){
+	  maxHeight = std::max(maxHeight, i + 1);
+	}
+      }
+    }
+  }
+
+  maxHeight = std::max(maxHeight, maxHit);
+  
+  return maxHeight;
+}
+
+unsigned int GameLevel::getRandomColumnHeight(){
+  unsigned int maxHeight = 0;
+  for(glm::vec2 pos : activePositions){
+    unsigned int height = getMaxColumnHeight(pos);
+    maxHeight = std::max(maxHeight, height);
+  }
+  return rand() % maxHeight + 1;
 }
 
 void GameLevel::pushColumn(unsigned int columnHeight){
+  std::vector<CollisionBox> column;
   for(unsigned int i = 0; i < columnHeight; i++){
     GameObject block;
     block.position = glm::vec2(scrollOffset + columnHeights.size() * blockSize, 
         bottomY - (i + 1) * blockSize);
     block.size = glm::vec2(blockSize);
-    block.texture = ResourceManager::getTexture("wall");
+    column.push_back(block);
+    
+    block.texture = ResourceManager::getTexture("wall"); 
     block.velocity.x = -scrollVelocity;
     blocks.push_back(block);
   }
   columnHeights.push_back(columnHeight);
+
+  float dt = 1.0f / 10.0f;
+  bool landNewCol = false;
+  glm::vec2 firstNewColPos = glm::vec2(0.0f);
+  std::vector<glm::vec2> nextActivePositions; 
+  for(glm::vec2 pos : activePositions){ 
+    CollisionBox player;
+    player.position = pos;
+    player.acceleration.y = 1000.0f;
+    player.size = glm::vec2(blockSize);
+
+    player.move(dt);
+    if(player.checkCollision(column.back())){
+      if(player.checkCollisionSide(column.back(), dt) == SIDE_TOP){
+	if(!landNewCol || pos.x < firstNewColPos.x){
+	  firstNewColPos = pos;
+	  landNewCol = true;
+	} 
+      }
+    }
+
+    std::pair nextPosPair = getNextActivePosition(pos, column);
+    if(nextPosPair.second){
+      glm::vec2 nextPos = nextPosPair.first;
+      if(nextPos != pos){
+        if(!landNewCol || nextPos.x < firstNewColPos.x){
+	  firstNewColPos = nextPos;
+	  landNewCol = true;
+	} 
+      }else{
+        nextActivePositions.push_back(nextPos);
+      }
+    }
+  }
+
+  if(landNewCol){
+    glm::vec2 pos = firstNewColPos;
+    while(pos.x <= columnHeights.size() * blockSize){
+      nextActivePositions.push_back(pos);
+      pos.x += dt * scrollVelocity;
+    }
+  }
+
+  std::swap(activePositions, nextActivePositions);
 }
 
 void GameLevel::popColumn(){
@@ -32,11 +158,17 @@ void GameLevel::popColumn(){
   scrollOffset += blockSize;
 }
 
+std::deque<GameObject>& GameLevel::getBlocks(){
+  return blocks;
+}
+
 void GameLevel::init(unsigned int width, unsigned int height, float blockSize){
   this->blockSize = blockSize;
   scrollVelocity = 250.0f;
   scrollOffset = 0.0f;
   bottomY = height;
+
+  activePositions.push_back(glm::vec2(0.0f, bottomY - 2 * blockSize));
 
   columnHeights.clear();
   blocks.clear();
@@ -50,10 +182,15 @@ void GameLevel::scroll(float dt){
   for(GameObject &block : blocks){
     block.move(dt);
   }
+  for(glm::vec2 &pos : activePositions){
+    pos.x -= scrollVelocity * dt;
+  }
 
   if(scrolledOffscreen()){
+    unsigned int height = getRandomColumnHeight();
+
     popColumn();
-    pushColumn(rand() % 3 + 1);
+    pushColumn(height);   
   }
 }
 

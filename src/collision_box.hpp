@@ -5,10 +5,10 @@
 #include <glm/glm.hpp>
 
 enum CollisionSide{
-  TOP,
-  BOTTOM,
-  LEFT,
-  RIGHT
+  SIDE_TOP,
+  SIDE_BOTTOM,
+  SIDE_LEFT,
+  SIDE_RIGHT
 };
 
 class CollisionBox{

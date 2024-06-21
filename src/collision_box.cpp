@@ -25,7 +25,7 @@ bool CollisionBox::checkCollision(CollisionBox &other){
 
 CollisionSide CollisionBox::checkCollisionSide(CollisionBox &other, float dt){
   if(movePredict(-dt).y + size.y <= other.movePredict(-dt).y + 1){
-    return TOP;
+    return SIDE_TOP;
   }
-  return LEFT;
+  return SIDE_LEFT;
 }

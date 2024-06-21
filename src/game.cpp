@@ -78,7 +78,7 @@ void Game::update(float dt){
   float newPosY = 0.0f;
   for(GameObject &block : level->getBlocks()){
     if(player.checkCollision(block)){
-      if(player.checkCollisionSide(block, dt) == TOP){
+      if(player.checkCollisionSide(block, dt) == SIDE_TOP){
         newPosY = block.position.y - player.size.y;
 	playerOnGround = true;
       }else{
