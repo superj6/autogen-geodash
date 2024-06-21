@@ -22,6 +22,7 @@ void Game::init(){
   player.position.x = 3 * blockSize;
   player.position.y = 50.0f;
   player.acceleration.y = 1000.0f;
+  player.color = glm::vec3(1.0f, 2.0f, 1.0f);
   playerOnGround = false;
 
   level = new GameLevel();
@@ -53,6 +54,7 @@ void Game::processInput(){
       player.position.y = 50.0f;
       player.acceleration.y = 1000.0f;
       player.velocity.y = 0.0f;
+      player.color = glm::vec3(1.0f, 2.0f, 1.0f);
       playerOnGround = false;
 
       delete level;

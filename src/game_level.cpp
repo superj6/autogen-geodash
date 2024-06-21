@@ -17,15 +17,14 @@ std::pair<glm::vec2, bool> GameLevel::getNextActivePosition(glm::vec2 startPos, 
   player.acceleration.y = 1000.0f; 
 
   bool collided = false;
-  const float dt = 1.0f / 10.0f;
   std::pair<glm::vec2, bool> retPos;
   while(!collided && player.position.x <= column[0].position.x + column[0].size.x){
-    player.move(dt);
+    player.move(dtSim);
 
     for(CollisionBox &block : column){
       if(player.checkCollision(block)){
 	collided = true;
-	if(player.checkCollisionSide(block, dt) == SIDE_TOP){
+	if(player.checkCollisionSide(block, dtSim) == SIDE_TOP){
 	  glm::vec2 pos = glm::vec2(player.position.x, block.position.y - block.size.y);
 	  retPos = std::make_pair(pos, true);
 	}else{
@@ -61,15 +60,14 @@ unsigned int GameLevel::getMaxColumnHeight(glm::vec2 startPos){
   }
 
   unsigned int maxHeight = 0, maxHit = column.size();
-  const float dt = 1.0f / 10.0f;
   while(player.position.x <= column[0].position.x + column[0].size.x){
-    player.move(dt);
+    player.move(dtSim);
 
     for(unsigned int i = 0; i < column.size(); i++){
       CollisionBox &block = column[i];
       if(i < maxHit && player.checkCollision(block)){
 	maxHit = i;
-	if(player.checkCollisionSide(block, dt) == SIDE_TOP){
+	if(player.checkCollisionSide(block, dtSim) == SIDE_TOP){
 	  maxHeight = std::max(maxHeight, i + 1);
 	}
       }
@@ -105,7 +103,6 @@ void GameLevel::pushColumn(unsigned int columnHeight){
   }
   columnHeights.push_back(columnHeight);
 
-  float dt = 1.0f / 10.0f;
   bool landNewCol = false;
   glm::vec2 firstNewColPos = glm::vec2(0.0f);
   std::vector<glm::vec2> nextActivePositions; 
@@ -115,9 +112,9 @@ void GameLevel::pushColumn(unsigned int columnHeight){
     player.acceleration.y = 1000.0f;
     player.size = glm::vec2(blockSize);
 
-    player.move(dt);
+    player.move(dtSim);
     if(player.checkCollision(column.back())){
-      if(player.checkCollisionSide(column.back(), dt) == SIDE_TOP){
+      if(player.checkCollisionSide(column.back(), dtSim) == SIDE_TOP){
 	if(!landNewCol || pos.x < firstNewColPos.x){
 	  firstNewColPos = pos;
 	  landNewCol = true;
@@ -143,7 +140,7 @@ void GameLevel::pushColumn(unsigned int columnHeight){
     glm::vec2 pos = firstNewColPos;
     while(pos.x <= columnHeights.size() * blockSize){
       nextActivePositions.push_back(pos);
-      pos.x += dt * scrollVelocity;
+      pos.x += dtSim * scrollVelocity;
     }
   }
 
@@ -167,6 +164,7 @@ void GameLevel::init(unsigned int width, unsigned int height, float blockSize){
   scrollVelocity = 250.0f;
   scrollOffset = 0.0f;
   bottomY = height;
+  dtSim = 1.0f / 10.0f;
 
   activePositions.push_back(glm::vec2(0.0f, bottomY - 2 * blockSize));
 

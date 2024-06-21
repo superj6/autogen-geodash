@@ -9,7 +9,7 @@
 
 class GameLevel{
 private:
-  float blockSize, scrollOffset, scrollVelocity, bottomY;
+  float blockSize, scrollOffset, scrollVelocity, bottomY, dtSim;
   std::deque<unsigned int> columnHeights;
   std::deque<GameObject> blocks;
   std::vector<glm::vec2> activePositions;
