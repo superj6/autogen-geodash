@@ -4,4 +4,4 @@ play geometrydash-like clone with automatically generated levels.
 
 levels are simulated on generation to ensure solveable.
 
-rendered with opengl.
+rendered with opengl. structure heavily based on [learnopengl breakout](https://learnopengl.com/In-Practice/2D-Game/Breakout).
