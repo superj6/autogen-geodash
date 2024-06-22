@@ -25,6 +25,8 @@ private:
   GameObject player;
   GameLevel *level;
   bool playerOnGround;
+
+  void moveCameraToPlayer();
 public:
   Game(unsigned int width, unsigned int height);
   void init();

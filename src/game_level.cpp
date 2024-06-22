@@ -4,16 +4,12 @@
 
 #include <random>
 
-bool GameLevel::scrolledOffscreen(){
-  return scrollOffset <= -blockSize;
-}
-
 std::pair<glm::vec2, bool> GameLevel::getNextActivePosition(glm::vec2 startPos, std::vector<CollisionBox> column){
   CollisionBox player;
   player.position = startPos;
   player.size = glm::vec2(blockSize);
   player.velocity.y = -400.0f;
-  player.velocity.x = scrollVelocity;
+  player.velocity.x = playerVelocity;
   player.acceleration.y = 1000.0f; 
 
   bool collided = false;
@@ -47,7 +43,7 @@ unsigned int GameLevel::getMaxColumnHeight(glm::vec2 startPos){
   player.position = startPos;
   player.size = glm::vec2(blockSize);
   player.velocity.y = -400.0f;
-  player.velocity.x = scrollVelocity;
+  player.velocity.x = playerVelocity;
   player.acceleration.y = 1000.0f; 
 
   std::vector<CollisionBox> column;
@@ -85,6 +81,7 @@ unsigned int GameLevel::getRandomColumnHeight(){
     unsigned int height = getMaxColumnHeight(pos);
     maxHeight = std::max(maxHeight, height);
   }
+
   int height = rand() % maxHeight + 1;
   while(height == columnHeights.end()[-2] && columnHeights.back() < height){
     height = rand() % maxHeight + 1;
@@ -102,11 +99,10 @@ void GameLevel::pushColumn(unsigned int columnHeight){
     column.push_back(block);
     
     block.texture = ResourceManager::getTexture("wall"); 
-    block.velocity.x = -scrollVelocity;
     blocks.push_back(block);
   }
   columnHeights.push_back(columnHeight);
-
+   
   bool landNewCol = false;
   glm::vec2 firstNewColPos = glm::vec2(0.0f);
   std::vector<glm::vec2> nextActivePositions; 
@@ -142,9 +138,9 @@ void GameLevel::pushColumn(unsigned int columnHeight){
 
   if(landNewCol){
     glm::vec2 pos = firstNewColPos;
-    while(pos.x < columnHeights.size() * blockSize){
+    while(pos.x < scrollOffset + columnHeights.size() * blockSize){
       nextActivePositions.push_back(pos);
-      pos.x += dtSim * scrollVelocity;
+      pos.x += dtSim * playerVelocity;
     }
   }
 
@@ -165,10 +161,10 @@ std::deque<GameObject>& GameLevel::getBlocks(){
 
 void GameLevel::init(unsigned int width, unsigned int height, float blockSize){
   this->blockSize = blockSize;
-  scrollVelocity = 250.0f;
+  playerVelocity = 250.0f;
   scrollOffset = 0.0f;
   bottomY = height;
-  dtSim = 1.0f / 10.0f;
+  dtSim = 1.0f / 30.0f;
 
   activePositions.push_back(glm::vec2(0.0f, bottomY - 2 * blockSize));
 
@@ -179,20 +175,12 @@ void GameLevel::init(unsigned int width, unsigned int height, float blockSize){
   }
 }
 
-void GameLevel::scroll(float dt){  
-  scrollOffset -= scrollVelocity * dt;
-  for(GameObject &block : blocks){
-    block.move(dt);
-  }
-  for(glm::vec2 &pos : activePositions){
-    pos.x -= scrollVelocity * dt;
-  }
-
-  if(scrolledOffscreen()){
-    unsigned int height = getRandomColumnHeight();
-
+void GameLevel::scroll(float playerPosX){  
+  if(playerPosX - scrollOffset >= 4 * blockSize){
     popColumn();
-    pushColumn(height);   
+
+    unsigned int height = getRandomColumnHeight();
+    pushColumn(height);  
   }
 }
 

@@ -1,6 +1,15 @@
 #include "game.hpp"
 #include "resource_manager.hpp"
 
+void Game::moveCameraToPlayer(){
+  Shader spriteShader = ResourceManager::getShader("sprite");
+
+  glm::vec3 cameraPos = glm::vec3(player.position.x - 3 * blockSize, 0.0f, 0.0f);
+  glm::mat4 view = glm::lookAt(cameraPos, cameraPos+glm::vec3(0.0f, 0.0f, -1.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+  spriteShader.setMat4("view", view);
+  
+}
+
 Game::Game(unsigned int width, unsigned int height) : width(width), height(height), blockSize(50.0f), state(GAME_MENU), player(){}
 
 void Game::init(){
@@ -25,6 +34,8 @@ void Game::init(){
   player.color = glm::vec3(1.0f, 2.0f, 1.0f);
   playerOnGround = false;
 
+  moveCameraToPlayer();
+
   level = new GameLevel();
 
   stillPressed = true;
@@ -39,6 +50,7 @@ void Game::processInput(){
     if(keys[GLFW_KEY_SPACE] && !stillPressed){
       state = GAME_ACTIVE;
       level->init(width, height, blockSize);
+      player.velocity.x = 250.0f;
     }
   }else if(state == GAME_ACTIVE){
     if(keys[GLFW_KEY_SPACE]){
@@ -57,6 +69,8 @@ void Game::processInput(){
       player.color = glm::vec3(1.0f, 2.0f, 1.0f);
       playerOnGround = false;
 
+      moveCameraToPlayer();
+
       delete level;
       level = new GameLevel();
     }
@@ -74,7 +88,9 @@ void Game::update(float dt){
   }
 
   player.move(dt);
-  level->scroll(dt);
+  level->scroll(player.position.x);
+
+  moveCameraToPlayer();
   
   playerOnGround = false;
   float newPosY = 0.0f;
