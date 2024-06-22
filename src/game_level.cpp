@@ -85,7 +85,11 @@ unsigned int GameLevel::getRandomColumnHeight(){
     unsigned int height = getMaxColumnHeight(pos);
     maxHeight = std::max(maxHeight, height);
   }
-  return rand() % maxHeight + 1;
+  int height = rand() % maxHeight + 1;
+  while(height == columnHeights.end()[-2] && columnHeights.back() < height){
+    height = rand() % maxHeight + 1;
+  }
+  return height;
 }
 
 void GameLevel::pushColumn(unsigned int columnHeight){
@@ -138,7 +142,7 @@ void GameLevel::pushColumn(unsigned int columnHeight){
 
   if(landNewCol){
     glm::vec2 pos = firstNewColPos;
-    while(pos.x <= columnHeights.size() * blockSize){
+    while(pos.x < columnHeights.size() * blockSize){
       nextActivePositions.push_back(pos);
       pos.x += dtSim * scrollVelocity;
     }
