@@ -159,9 +159,9 @@ std::deque<GameObject>& GameLevel::getBlocks(){
   return blocks;
 }
 
-void GameLevel::init(unsigned int width, unsigned int height, float blockSize){
+GameLevel::GameLevel(unsigned int width, unsigned int height, float blockSize, float playerVelocity){
   this->blockSize = blockSize;
-  playerVelocity = 250.0f;
+  this->playerVelocity = 250.0f;
   scrollOffset = 0.0f;
   bottomY = height;
   dtSim = 1.0f / 30.0f;

@@ -22,7 +22,7 @@ private:
   bool keys[1024];
   SpriteRenderer *renderer;
   GameState state;
-  GameObject player;
+  GameObject *player;
   GameLevel *level;
   bool playerOnGround;
 

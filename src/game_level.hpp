@@ -20,9 +20,8 @@ private:
   void pushColumn(unsigned int columnHeight);
   void popColumn();
 public: 
-  GameLevel(){}
+  GameLevel(unsigned int width, unsigned int height, float blockSize, float playerVelocity);
   std::deque<GameObject>& getBlocks();
-  void init(unsigned int width, unsigned int height, float blockSize);
   void scroll(float playPosX);
   void draw(SpriteRenderer &renderer);
 };
